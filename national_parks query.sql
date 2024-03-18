@@ -28,3 +28,7 @@ FROM (
     GROUP BY StateID WITH ROLLUP
 ) AS ParksSummary
 WHERE NumOfParks > 2;
+
+SELECT COUNT(DISTINCT StateID) FROM us_np;
+
+SELECT *, RANK() OVER (ORDER BY Size DESC) AS Ranking FROM us_np;
